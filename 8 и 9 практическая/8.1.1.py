@@ -12,19 +12,15 @@ print('Изначальный массив: ')
 
 for i in range(n):
     for j in range(n):
-        print(a[i][j], end = ' ')
+        print(a[i][j], end=' ')
     print()
 
 for i in range(n):
-    for j in range(n):
-        if a[j] > a[i]:
+    for j in range(i + 1, n):
+        if a[i][j] > 0:
             S += a[i][j]
+            k += 1
 
 print('Сумма элементов над даигональю: ', S)
-
-for i in range(n):
-    for j in range(n):
-        if a[i][j] > 0:
-            k += 1
 
 print('Количество положительных элементов над диагональю: ', k)

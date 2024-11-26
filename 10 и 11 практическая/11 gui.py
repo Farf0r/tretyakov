@@ -32,13 +32,15 @@ def calculate():
     elif operation == "/":
         if n2 != 0:
             result = n1 / n2
+        elif n2 == 0:
+            result = "Делить на ноль нельзя"
     else:
         result = "Неверная операция"
 
     lbl2.config(text=f"Ответ: {result}")
 
 
-frame = Frame(window)
+frame = Frame(tab1)
 frame.pack(fill=Y)
 frame.pack(expand=True)
 lbl = Label(frame, text="Калькулятор", font=('Arial Bond', 12))
@@ -61,11 +63,11 @@ lbl2.grid(row=4, column=2)
 def clicked():
     operation = selected.get()  # ?
 
-    if operation == 'Первый':
+    if operation == 1:
         messagebox.showinfo('Выбор', 'Вы выбрали первый вариант')
-    elif operation == 'Второй':
+    elif operation == 2:
         messagebox.showinfo('Выбор', 'Вы выбрали второй вариант')
-    elif operation == 'Третий':
+    elif operation == 3:
         messagebox.showinfo('Выбор', 'Вы выбрали третий вариант')
 
 
@@ -81,6 +83,6 @@ btn2.grid(row=1, column=4)
 
 # Текст
 
-txt = Text()
-txt.pack()
+t_txt = Text(tab3)
+t_txt.pack()
 window.mainloop()
